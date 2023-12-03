@@ -23,7 +23,7 @@ def es_parte(lineas,linea,ini,fin):
   print("No es pieza")
   return False
 def obtener_partes(lineas,linea,pos,lista_partes):
-  partes=[]
+  partes_adjuntas=[]
   print("Pos es",pos)
   print("Condición es",pos<len(lineas[linea])-1)
   nuevo_ini=pos-1*int(pos>0)
@@ -40,9 +40,9 @@ def obtener_partes(lineas,linea,pos,lista_partes):
     for i in range(nuevo_ini,nuevo_fin+1):
       if lineas[l][i].isdigit():
         for parte in lista_partes:
-          if parte.linea==l and i in range(parte.ini,parte.fin+1) and parte.id not in (p.id for p in partes):
-            partes.append(parte)
-  return partes
+          if parte.linea==l and i in range(parte.ini,parte.fin+1) and parte.id not in (p.id for p in partes_adjuntas):
+            partes_adjuntas.append(parte)
+  return partes_adjuntas
 with open("dia3.txt","r") as f:
   suma=0
   lineas=f.readlines()
