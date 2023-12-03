@@ -1,3 +1,4 @@
+from time import perf_counter
 class Parte:
   def __init__(self,id,linea,ini,fin):
     self.id=id
@@ -43,6 +44,7 @@ def obtener_partes(lineas,linea,pos,lista_partes):
           if parte.linea==l and i in range(parte.ini,parte.fin+1) and parte.id not in (p.id for p in partes_adjuntas):
             partes_adjuntas.append(parte)
   return partes_adjuntas
+start=perf_counter()
 with open("dia3.txt","r") as f:
   suma=0
   lineas=f.readlines()
@@ -90,4 +92,6 @@ with open("dia3.txt","r") as f:
             multi*=int(lineas[parte.linea][parte.ini:parte.fin+1])
         print("Sumando",multi)
         suma+=multi
-  print(suma)
+  print("El resultado es",suma)
+end=perf_counter()
+print("Tiempo de ejecución:",end-start,"segundos")
