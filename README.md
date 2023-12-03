@@ -1,7 +1,7 @@
 # Advent of Code 2023
 Este es un repositorio con las soluciones en python a los retos del Advent of Code de 2023.
 
-##Estructura del proyecto
+## Estructura del proyecto
 ```
 |Carpeta del día llamada "diaX"
 |  |Las soluciones: 2 archivos de python, 1 por cada parte, llamados "diaXp1.py" y "diaXp2.py"
