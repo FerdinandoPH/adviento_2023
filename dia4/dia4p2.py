@@ -15,7 +15,7 @@ with open ("dia4.txt","r") as f:
     except IndexError:
       break
     if siguiente_id>id:
-      print("Cambio al id",id,"inminente")
+      print("Cambio al id",siguiente_id,"inminente")
       linea_a_examinar=linea[linea.index(":")+2:]
       ganadores,numeros=linea_a_examinar.split(" | ")[0].split(" "),linea_a_examinar.split(" | ")[1].split(" ")
       ganadores=[k for k in ganadores if k!=""]
