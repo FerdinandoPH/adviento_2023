@@ -5,13 +5,9 @@ with open ("dia4.txt","r") as f:
   suma=0
   cantidad_mismo_id=1
   puntos=0
-  fin_de_ids={}
   for i,linea in enumerate(lineas):
     lineas[i]=linea.rstrip()
-    fin_de_ids[i+1]=i
   lineas_congeladas=lineas.copy()
-  max_id=int(list(fin_de_ids.keys())[-1])
-  print(fin_de_ids)
   for i,linea in enumerate(lineas):
     id=int(linea[linea.index(" ")+1:linea.index(":")])
     try:
