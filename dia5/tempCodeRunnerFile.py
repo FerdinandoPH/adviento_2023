@@ -1,0 +1,1 @@
+            print("Rangos: ",rangos)
