@@ -25,5 +25,11 @@ with open("dia5.txt","r") as f:
         elif i>1:
             valores=linea.split(" ")
             rangos[range(int(valores[1]),int(valores[1])+int(valores[2]))]=int(valores[1])-int(valores[0])
+            if i==len(lineas)-1:
+                print("Rangos: ",rangos)
+                for j,semilla in enumerate(semillas):
+                    for rango in rangos.keys():
+                        if semilla in rango:
+                            semillas[j]-=rangos[rango]
     print("Semillas finales:",semillas)
     print("Semilla más cercana:",min(semillas))

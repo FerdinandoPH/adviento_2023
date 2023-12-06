@@ -1,1 +1,1 @@
-            print("Rangos: ",rangos)
+semillas
