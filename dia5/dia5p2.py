@@ -19,6 +19,7 @@ with open("dia5.txt","r") as f:
         else:
             rangos_de_mapeado.append(subrangos_de_mapeado)
             subrangos_de_mapeado=[]
+    rangos_de_mapeado.append(subrangos_de_mapeado)
     print(rangos_de_mapeado)
     nuevos_rangos_de_semillas=[]
     for subrango in rangos_de_mapeado:
