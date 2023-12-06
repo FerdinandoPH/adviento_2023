@@ -6,4 +6,4 @@ with open("dia6.txt","r") as f:
   print(tiempo)
   print(distancia)
   intersecciones=(int(((-tiempo+(tiempo**2+4*-distancia)**(1/2))/-2)),int(((-tiempo-(tiempo**2-4*-1*-distancia)**(1/2))/-2)))
-  print("Resultados:",max(intersecciones)-min(intersecciones))
+  print("Resultado:",max(intersecciones)-min(intersecciones))
