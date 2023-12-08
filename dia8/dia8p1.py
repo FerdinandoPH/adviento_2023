@@ -8,10 +8,9 @@ with open("dia8.txt","r") as f:
   print(mapa)
   print(direcciones)
   pasos=0
-  lugar_actual=list(mapa.keys())[0]
+  lugar_actual="AAA"
   while lugar_actual!="ZZZ":
-    print("Estoy en",lugar_actual,"y llevo",pasos,"pasos")
-    print(mapa[lugar_actual],"y tengo que ir por",direcciones[pasos%len(direcciones)])
+    #print(mapa[lugar_actual],"y tengo que ir por",direcciones[pasos%len(direcciones)])
     if direcciones[pasos%len(direcciones)]=="L":
       lugar_actual=mapa[lugar_actual][0]
     else:
