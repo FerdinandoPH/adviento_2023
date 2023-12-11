@@ -69,6 +69,7 @@ with open("dia10.txt","r") as f:
       u.write("\n")
   suma=0
   print("Y ahora, calculo los elementos dentro (I) y fuera (O) del bucle (te lo dejo en un mapa también))")
+  #La magia detrás de esto es el teorema de Jordan, que dice que si trazas una línea desde un punto fuera de una figura cerrada hasta otro punto fuera de la figura, y cuentas las intersecciones que hace con la figura, si el número de intersecciones es impar, el punto está dentro de la figura, y si es par, está fuera.
   with open("resultados.txt","w") as o:
     for i,linea in enumerate(lineas):
       for j,caracter in enumerate(linea):
@@ -77,18 +78,18 @@ with open("dia10.txt","r") as f:
         if (j,i) not in bucle:
           intersecs=0
           curvas="JLF7"
-          primera_curva=None
-          caracteres_de_intersec=""
+          caracteres_de_intersec="|"+curvas
           #print(f"Miramos({j}, {i}), que es {lineas[i][j]}")
-          for k in range(j+1,len(linea)):
-            if lineas[i][k] in curvas and (k,i) in bucle:
-              caracteres_de_intersec="|"+lineas[i][k]+misma_curva[lineas[i][k]]
-              #print("Intersec y primera curva:",lineas[i][k])
-              break
-          for k in range(j+1,len(linea)):
+          for k in range(j+1,len(linea)): #Miramos a la derecha
             if lineas[i][k] in caracteres_de_intersec and (k,i) in bucle:
-              intersecs+=1
-              #print("Cuento",lineas[i][k],"como intersec")
+              if lineas[i][k] in curvas:
+                caracteres_de_intersec="|"+lineas[i][k]+misma_curva[lineas[i][k]] #Una vez encontramos la primera curva, solo contamos las barras y las curvas en esa dirección
+                curvas="" #Para no añadir más curvas de tipo distinto a la primera
+                #print("Primera curva:",lineas[i][k])
+                intersecs+=1
+              else:
+                intersecs+=1
+                #print("Cuento",lineas[i][k],"como intersec")
           if intersecs%2==1:
             #print(f"({j}, {i}), que es {lineas[i][j]} es interno")
             suma+=1
