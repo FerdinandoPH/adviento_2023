@@ -45,6 +45,7 @@ with open("dia11.txt","r") as f:
     for j,caracter in enumerate(linea):
       if caracter=="#":
         galaxias.append((j,i))
+  print("Hay",len(galaxias),"galaxias")
   suma_de_distancias=0
   espaciador=999999 #tiene que ser -1 a la expansión desesada, excepto si es 1, entonces es 1
   for i in range(len(galaxias)-1,-1,-1):
