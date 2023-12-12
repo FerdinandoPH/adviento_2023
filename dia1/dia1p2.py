@@ -1,5 +1,5 @@
 with open("dia1p1.txt","r") as f:
-  lineas=f.readlines()
+  lineas=[l.rstrip() for l in f.readlines()]
   suma=0
   nums={"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9}
   for linea in lineas:
